@@ -113,4 +113,14 @@ class CuestionarioActivity : AppCompatActivity() {
         }
         startActivity(intent)
     }
+
+    private fun validarCheckBox(): Boolean {
+        // Verificar que al menos un CheckBox esté seleccionado
+        return binding.cbgusto.isChecked ||
+                binding.cbgarganta.isChecked ||
+                binding.cbtos.isChecked ||
+                binding.cbnasal.isChecked ||
+                binding.cbfiebre.isChecked ||
+                binding.cbninguno.isChecked
+    }
 }

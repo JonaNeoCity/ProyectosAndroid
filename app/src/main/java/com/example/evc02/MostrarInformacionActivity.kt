@@ -18,27 +18,25 @@ class MostrarInformacionActivity : AppCompatActivity() {
         val dni = intent.getStringExtra("dni")
         val celular = intent.getStringExtra("celular")
         val email = intent.getStringExtra("email")
-        val checkBox1 = intent.getBooleanExtra("checkBox1", false)
-        val checkBox2 = intent.getBooleanExtra("checkBox2", false)
-        val checkBox3 = intent.getBooleanExtra("checkBox3", false)
-        val checkBox4 = intent.getBooleanExtra("checkBox4", false)
+        val checkboxSeleccionadosArray = intent.getStringArrayExtra("checkboxSeleccionado")
         val radioButtonSeleccionado = intent.getStringExtra("radioButtonSeleccionado")
+
+        // Convertir el array de opciones de CheckBox a una cadena
+        val checkboxSeleccionados = checkboxSeleccionadosArray?.joinToString(", ") ?: ""
 
         // STRING CON TODA LA INFO
         val informacion = """
-            Nombre: $nombre
-            Apellidos: $apellidos
-            DNI: $dni
-            Celular: $celular
-            Email: $email
-            CheckBox 1: ${checkBox1.toString()}
-            CheckBox 2: ${checkBox2.toString()}
-            CheckBox 3: ${checkBox3.toString()}
-            CheckBox 4: ${checkBox4.toString()}
-            RadioButton Seleccionado: $radioButtonSeleccionado
-        """.trimIndent()
+        Nombre: $nombre
+        Apellidos: $apellidos
+        DNI: $dni
+        Celular: $celular
+        Email: $email
+        Programas que domina: $checkboxSeleccionados
+        Color Favorito: $radioButtonSeleccionado
+    """.trimIndent()
 
         // MOSTRAR INFO EN EL TEXTVIEW
         binding.tvinformacion.text = informacion
+
     }
 }

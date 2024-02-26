@@ -25,10 +25,7 @@ class RegistroActivity : AppCompatActivity() {
                 val dni = binding.etdni.text.toString()
                 val celular = binding.etcelular.text.toString()
                 val email = binding.etemail.text.toString()
-                val checkBox1 = binding.cbsqlserver.isChecked
-                val checkBox2 = binding.cbstudiocode.isChecked
-                val checkBox3 = binding.cbandroidstudio.isChecked
-                val checkBox4 = binding.cbotro.isChecked
+                val checkboxSeleccionado = validarCheckBox()
                 val radioButtonSeleccionado = obtenerRadioButtonSeleccionado()
 
                 // PASANDO DATOS A MOSTRARINFOACTIVITY
@@ -38,11 +35,8 @@ class RegistroActivity : AppCompatActivity() {
                     putExtra("dni", dni)
                     putExtra("celular", celular)
                     putExtra("email", email)
-                    putExtra("checkBox1", checkBox1)
-                    putExtra("checkBox2", checkBox2)
-                    putExtra("checkBox3", checkBox3)
-                    putExtra("checkBox4", checkBox4)
-                    putExtra("radioButtonSeleccionado", radioButtonSeleccionado)
+                    putExtra("checkboxSeleccionado", validarCheckBox())
+                    putExtra("radioButtonSeleccionado", obtenerRadioButtonSeleccionado())
                 }
                 startActivity(intent)
             } else {
@@ -71,8 +65,15 @@ class RegistroActivity : AppCompatActivity() {
             R.id.rbverde -> "Verde"
             R.id.rbotro -> "Otro"
             else -> "No se selecciono ninguna opcion"
-
+        }
     }
-  }
+
+    private fun validarCheckBox(): Boolean {
+        // Verificar que al menos un CheckBox esté seleccionado
+        return binding.cbsqlserver.isChecked ||
+                binding.cbstudiocode.isChecked ||
+                binding.cbandroidstudio.isChecked ||
+                binding.cbotro.isChecked
+    }
 
 }

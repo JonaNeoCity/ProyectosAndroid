@@ -33,40 +33,54 @@ class MostrarRespuestasActivity : AppCompatActivity() {
 
         // Mostrar respuestas de la pregunta 1
         if (respuestasPregunta1 != null) {
-            textoRespuestas.append("Respuestas Pregunta 1:\n")
-            for ((index, respuesta) in respuestasPregunta1.withIndex()) {
-                textoRespuestas.append("Respuesta ${index + 1}: ${if (respuesta) "Sí" else "No"}\n")
+            val textoSintomas = StringBuilder()
+            textoSintomas.append("Sintomas:\n")
+            if (respuestasPregunta1.size >= 6) {
+                textoSintomas.append("¿Presentas disminucion del gusto o del olfato?: ${if (respuestasPregunta1[0]) "Sí" else "No"}\n")
+                textoSintomas.append("¿Presentas tos?: ${if (respuestasPregunta1[1]) "Sí" else "No"}\n")
+                textoSintomas.append("¿Presentas dolor de garganta?: ${if (respuestasPregunta1[2]) "Sí" else "No"}\n")
+                textoSintomas.append("¿Presentas congestion nasal?: ${if (respuestasPregunta1[3]) "Sí" else "No"}\n")
+                textoSintomas.append("¿Presentas fiebre?: ${if (respuestasPregunta1[4]) "Sí" else "No"}\n")
+                textoSintomas.append("¿No presentas ningun sintoma?: ${if (respuestasPregunta1[5]) "Sí" else "No"}\n")
+                textoSintomas.append("\n")
             }
-            textoRespuestas.append("\n")
+            textoRespuestas.append(textoSintomas)
         }
+
+
 
         // Mostrar respuesta de la pregunta 2
         if (!opcionSeleccionadaPregunta2.isNullOrEmpty()) {
-            textoRespuestas.append("Respuesta pregunta 2: $opcionSeleccionadaPregunta2\n\n")
+            textoRespuestas.append("¿Tienes fiebre mayor a 37 grados?: $opcionSeleccionadaPregunta2\n\n")
         }
 
         // Mostrar respuesta de la pregunta 3
         if (!opcionSeleccionadaPregunta3.isNullOrEmpty()) {
-            textoRespuestas.append("Respuesta pregunta 3: $opcionSeleccionadaPregunta3\n\n")
+            textoRespuestas.append("¿Vives solo en casa?: $opcionSeleccionadaPregunta3\n\n")
         }
 
         // Mostrar respuesta de la pregunta 4
         if (!opcionSeleccionadaPregunta4.isNullOrEmpty()) {
-            textoRespuestas.append("Respuesta pregunta 4: $opcionSeleccionadaPregunta4\n\n")
+            textoRespuestas.append("¿Vives con un adulto mayor en casa?: $opcionSeleccionadaPregunta4\n\n")
         }
 
         // Mostrar respuestas de la pregunta 5
         if (respuestasPregunta5 != null) {
-            textoRespuestas.append("Respuestas Pregunta 5:\n")
-            for ((index, respuesta) in respuestasPregunta5.withIndex()) {
-                textoRespuestas.append("Respuesta ${index + 1}: ${if (respuesta) "Sí" else "No"}\n")
+            val textoServicios = StringBuilder()
+            textoServicios.append("Servicios:\n")
+            if (respuestasPregunta5.size >= 4) {
+                textoServicios.append("¿Cuentas con luz?: ${if (respuestasPregunta5[0]) "Sí" else "No"}\n")
+                textoServicios.append("¿Cuentas con agua?: ${if (respuestasPregunta5[1]) "Sí" else "No"}\n")
+                textoServicios.append("¿Cuentas con internet?: ${if (respuestasPregunta5[2]) "Sí" else "No"}\n")
+                textoServicios.append("¿Cuentas con cable?: ${if (respuestasPregunta5[3]) "Sí" else "No"}\n")
+                textoServicios.append("\n")
             }
+            textoRespuestas.append(textoServicios)
         }
 
         // Establecer el texto en el TextView
         binding.tvrespuestas.text = textoRespuestas.toString()
     }
-
 }
 
 
