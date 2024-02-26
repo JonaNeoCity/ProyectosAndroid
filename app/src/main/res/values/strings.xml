@@ -7,7 +7,7 @@
     <string name="seleccionar">Seleccione Programas que domine:</string>
     <string name="color">Seleccione su color favorito:</string>
     <string name="titulocuestionario">"CUESTIONARIO COVID-19 "</string>
-    <string name="marcar">1. Marca tus sintomas.</string>
+    <string name="marcar">1. Marca tus síntomas.</string>
     <string name="fiebre">2.¿Tienes fiebre mayor a 37 grados?</string>
     <string name="casa">3.¿Vives solo en casa?</string>
     <string name="adulto">4.¿Vives con un adulto mayor en casa?</string>
@@ -27,10 +27,10 @@
     <string name="valcbandroidstudio">"Android Studio "</string>
     <string name="valcbotro">Otro</string>
     <string name="valbtnacceder">Acceder</string>
-    <string name="valcbgusto">"Disminucion del gusto o del olfato "</string>
+    <string name="valcbgusto">"Disminución del gusto o del olfato "</string>
     <string name="valcbtos">Tos</string>
     <string name="valcbgarganta">"Dolor de garganta "</string>
-    <string name="valcbnasal">"Congestion nasal "</string>
+    <string name="valcbnasal">"Congestión nasal "</string>
     <string name="asdf" />
     <string name="sefeeee">Fiebre</string>
     <string name="valcbfiebre">Fiebre</string>
@@ -46,4 +46,6 @@
     <string name="valrbno1">NO</string>
     <string name="valrbsi2">SI</string>
     <string name="valrbno2">NO</string>
+    <string name="valetotrocolor">Ingrese otro color</string>
+    <string name="tituloConciertos">Conciertos</string>
 </resources>

@@ -25,7 +25,7 @@ class MenuPrincipalActivity : AppCompatActivity() {
         }
 
         binding.btnlistado.setOnClickListener {
-         val listado = AdapterLista()
+            startActivity(Intent(this, ListaConciertosActivity::class.java))
         }
    }
 }
