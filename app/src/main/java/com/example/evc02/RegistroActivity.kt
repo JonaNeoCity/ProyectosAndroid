@@ -25,7 +25,7 @@ class RegistroActivity : AppCompatActivity() {
                 val dni = binding.etdni.text.toString()
                 val celular = binding.etcelular.text.toString()
                 val email = binding.etemail.text.toString()
-                val checkboxSeleccionado = validarCheckBox()
+                val checkboxSeleccionado = obtenerCheckBoxSeleccionados()
                 val radioButtonSeleccionado = obtenerRadioButtonSeleccionado()
 
                 // PASANDO DATOS A MOSTRARINFOACTIVITY
@@ -35,7 +35,7 @@ class RegistroActivity : AppCompatActivity() {
                     putExtra("dni", dni)
                     putExtra("celular", celular)
                     putExtra("email", email)
-                    putExtra("checkboxSeleccionado", validarCheckBox())
+                    putExtra("checkboxSeleccionado", obtenerCheckBoxSeleccionados())
                     putExtra("radioButtonSeleccionado", obtenerRadioButtonSeleccionado())
                 }
                 startActivity(intent)
@@ -68,12 +68,24 @@ class RegistroActivity : AppCompatActivity() {
         }
     }
 
-    private fun validarCheckBox(): Boolean {
-        // Verificar que al menos un CheckBox esté seleccionado
-        return binding.cbsqlserver.isChecked ||
-                binding.cbstudiocode.isChecked ||
-                binding.cbandroidstudio.isChecked ||
-                binding.cbotro.isChecked
+    private fun obtenerCheckBoxSeleccionados(): Array<String> {
+        val checkBoxSeleccionados = mutableListOf<String>()
+
+        if (binding.cbsqlserver.isChecked) {
+            checkBoxSeleccionados.add(binding.cbsqlserver.text.toString())
+        }
+        if (binding.cbstudiocode.isChecked) {
+            checkBoxSeleccionados.add(binding.cbstudiocode.text.toString())
+        }
+        if (binding.cbandroidstudio.isChecked) {
+            checkBoxSeleccionados.add(binding.cbandroidstudio.text.toString())
+        }
+        if (binding.cbotro.isChecked) {
+            checkBoxSeleccionados.add(binding.cbotro.text.toString())
+        }
+
+        return checkBoxSeleccionados.toTypedArray()
     }
+
 
 }

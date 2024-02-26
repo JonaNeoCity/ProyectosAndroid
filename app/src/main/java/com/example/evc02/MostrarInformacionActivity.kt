@@ -21,21 +21,21 @@ class MostrarInformacionActivity : AppCompatActivity() {
         val checkboxSeleccionadosArray = intent.getStringArrayExtra("checkboxSeleccionado")
         val radioButtonSeleccionado = intent.getStringExtra("radioButtonSeleccionado")
 
-        // Convertir el array de opciones de CheckBox a una cadena
+// Convertir el array de opciones de CheckBox a una cadena
         val checkboxSeleccionados = checkboxSeleccionadosArray?.joinToString(", ") ?: ""
 
-        // STRING CON TODA LA INFO
+// STRING CON TODA LA INFO
         val informacion = """
-        Nombre: $nombre
-        Apellidos: $apellidos
-        DNI: $dni
-        Celular: $celular
-        Email: $email
-        Programas que domina: $checkboxSeleccionados
-        Color Favorito: $radioButtonSeleccionado
-    """.trimIndent()
+    Nombre: $nombre
+    Apellidos: $apellidos
+    DNI: $dni
+    Celular: $celular
+    Email: $email
+    Programas que domina: $checkboxSeleccionados
+    Color Favorito: $radioButtonSeleccionado
+""".trimIndent()
 
-        // MOSTRAR INFO EN EL TEXTVIEW
+// MOSTRAR INFO EN EL TEXTVIEW
         binding.tvinformacion.text = informacion
 
     }
